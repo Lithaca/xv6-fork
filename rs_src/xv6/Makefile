@@ -2,11 +2,6 @@ CARGO_CMD := cargo fmt && cargo clippy -- -D warnings && cargo build --release
 
 .DEFAULT_GOAL := all
 
-xv6-user-panic:
-	cd xv6-user-panic && $(CARGO_CMD)
-
-xv6-kernel-panic:
-	cd xv6-kernel-panic && $(CARGO_CMD)
 #BOARD
 BOARD := qemu
 SBI ?= rustsbi
