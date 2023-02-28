@@ -7,6 +7,16 @@ xv6-user-panic:
 
 xv6-kernel-panic:
 	cd xv6-kernel-panic && $(CARGO_CMD)
+#BOARD
+BOARD := qemu
+SBI ?= rustsbi
+BOOTLOADER := ../bootloader/$(SBI)-$(BOARD).bin
+
+xv6-user-panic:
+	cd xv6-user-panic && $(CARGO_CMD)
+
+xv6-kernel-panic:
+	cd xv6-kernel-panic && $(CARGO_CMD)
 
 xv6-ulib:
 	cd xv6-ulib && $(CARGO_CMD)
