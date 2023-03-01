@@ -201,6 +201,7 @@ rs-qemu: rs-os fs.img
 	$(QEMU) $(RS_QEMUOPTS)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 rs-qemu-gdb: rs-os .gdbinit fs.img
 	@echo "*** Now run 'gdb' in another window." 1>&2
 	$(QEMU) $(RS_QEMUOPTS) -S $(QEMUGDB)
@@ -215,6 +216,11 @@ RS_QEMUGDB = $(shell if $(QEMU) -help | grep -q '^-gdb'; \
 rs-qemu-gdb: rs-os .gdbinit fs.img
 	@echo "*** Now run 'gdb' in another window." 1>&2
 	$(QEMU) $(RS_QEMUOPTS) -S $(RS_QEMUGDB)
+>>>>>>> temp
+=======
+rs-qemu-gdb: rs-os .gdbinit fs.img
+	@echo "*** Now run 'gdb' in another window." 1>&2
+	$(QEMU) $(RS_QEMUOPTS) -S $(QEMUGDB)
 >>>>>>> temp
 
 debug-sym: $K/kernel rs-os
