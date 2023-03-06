@@ -206,6 +206,7 @@ rs-qemu-gdb: rs-os .gdbinit fs.img
 	@echo "*** Now run 'gdb' in another window." 1>&2
 	$(QEMU) $(RS_QEMUOPTS) -S $(QEMUGDB)
 
+<<<<<<< HEAD
 gdb-debug:
 	gdb-multiarch -ex 'file $(RS_KERNEL)' -ex 'set arch riscv:rv64' -ex 'target remote localhost:$(GDBPORT)'
 =======
@@ -222,6 +223,10 @@ rs-qemu-gdb: rs-os .gdbinit fs.img
 	@echo "*** Now run 'gdb' in another window." 1>&2
 	$(QEMU) $(RS_QEMUOPTS) -S $(QEMUGDB)
 >>>>>>> temp
+=======
+rs-debug:
+	gdb-multiarch -ex 'file $(RS_KERNEL)' -ex 'set arch riscv:rv64' -ex 'target remote localhost:26000'
+>>>>>>> rs-debug
 
 debug-sym: $K/kernel rs-os
 	$(OBJDUMP) -t $K/kernel    | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > debug_c.sym
