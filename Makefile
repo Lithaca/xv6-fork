@@ -207,6 +207,7 @@ rs-qemu-gdb: rs-os .gdbinit fs.img
 	$(QEMU) $(RS_QEMUOPTS) -S $(QEMUGDB)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 gdb-debug:
 	gdb-multiarch -ex 'file $(RS_KERNEL)' -ex 'set arch riscv:rv64' -ex 'target remote localhost:$(GDBPORT)'
 =======
@@ -227,6 +228,10 @@ rs-qemu-gdb: rs-os .gdbinit fs.img
 rs-debug:
 	gdb-multiarch -ex 'file $(RS_KERNEL)' -ex 'set arch riscv:rv64' -ex 'target remote localhost:26000'
 >>>>>>> rs-debug
+=======
+gdb-debug:
+	gdb-multiarch -ex 'file $(RS_KERNEL)' -ex 'set arch riscv:rv64' -ex 'target remote localhost:$(GDBPORT)'
+>>>>>>> kernel
 
 debug-sym: $K/kernel rs-os
 	$(OBJDUMP) -t $K/kernel    | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$$/d' > debug_c.sym
